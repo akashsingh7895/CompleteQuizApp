@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">NewApp</string>
+
+    <string name="drawerOpen">open</string>
+    <string name="drawerClose">close</string>
+
+
+    <string name="supported_email">akash4099@gmail.com</string>
+    <string name="terms_condition">https://stackoverflow.com/questions/23411391/how-to-make-contact-us-form-in-android</string>
+    <string name="privacy_policy">https://stackoverflow.com/questions/23411391/how-to-make-contact-us-form-in-android</string>
+
+</resources>

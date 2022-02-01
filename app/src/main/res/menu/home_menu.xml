@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group
+        android:id="@+id/group7">
+        <item
+            android:id="@+id/myProfile"
+            android:icon="@drawable/user"
+            android:title="My profile"/>
+
+    </group>
+
+    <group
+        android:id="@+id/group6">
+        <item
+            android:id="@+id/myWallet"
+            android:icon="@drawable/wallet"
+            android:title="My wallet"/>
+
+    </group>
+
+    <group
+        android:id="@+id/group1">
+        <item
+            android:id="@+id/shareThis"
+            android:icon="@drawable/share_icon"
+            android:title="Share this app"/>
+
+    </group>
+
+    <group
+        android:id="@+id/group2">
+        <item
+            android:id="@+id/rateThisApp"
+            android:icon="@drawable/rate_this_icon"
+            android:title="Rate This app"/>
+
+    </group>
+
+
+    <group
+        android:id="@+id/group3">
+        <item
+            android:id="@+id/contactUs"
+            android:icon="@drawable/contact_us_icon"
+            android:title="Contact us"/>
+
+    </group>
+
+    <group
+        android:id="@+id/group4">
+        <item
+            android:id="@+id/privacyPoliy"
+            android:icon="@drawable/privicy_icon"
+            android:title="Privacy policy"/>
+
+    </group>
+
+    <group
+        android:id="@+id/group5">
+        <item
+            android:id="@+id/termsCondi"
+            android:icon="@drawable/terms_condi_icon"
+            android:title="Terms and condition"/>
+
+    </group>
+
+    <group
+        android:id="@+id/group8">
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/sign_out_icon_image"
+            android:title="Log out"/>
+
+    </group>
+
+
+</menu>

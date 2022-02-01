@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/background.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/btn_next.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/edit_text.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/ic_dollar.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/ic_question.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/kkk.xml" value="0.21481481481481482" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/next.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/one_round.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/option_right.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/option_unselected.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/option_wrong.xml" value="0.2666015625" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/round_line.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/share_app.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/view_back.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/wrong_option.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_category.xml" value="0.33" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.19479166666666667" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_leader_bord.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_my_wallet.xml" value="0.22" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_profile.xml" value="0.22" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_quiz.xml" value="0.22" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_result.xml" value="0.18" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_spin_wheel.xml" value="0.22" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/category_item.xml" value="0.25" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/coins_success_layout.xml" value="0.22" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/header.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/infcument_coins_diolag.xml" value="0.2" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/lucky_wheel_layout.xml" value="0.2" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/no_internet_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/progress_diloag.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/row_learbord.xml" value="0.33" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/menu/home_menu.xml" value="0.33" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
