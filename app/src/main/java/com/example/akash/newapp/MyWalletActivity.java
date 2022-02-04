@@ -48,6 +48,8 @@ public class MyWalletActivity extends AppCompatActivity {
             }
         });
 
+        binding.amount.setText("Rs."+"00");
+
         database.collection("USERS")
                 .document(firebaseAuth.getCurrentUser().getUid())
                 .get()
@@ -75,7 +77,7 @@ public class MyWalletActivity extends AppCompatActivity {
 
                         if (!binding.amount.getText().toString().equals("")){
 
-                            if(coins > 10000) {
+                            if(coins > 30000) {
                                 String uid = FirebaseAuth.getInstance().getUid();
                                 String mobil =   binding.withdrawMob.getText().toString();
                                 coinsAmount = Long.parseLong(binding.amount.getText().toString());
@@ -87,7 +89,8 @@ public class MyWalletActivity extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(Void aVoid) {
                                         double finalCoins = coins2-coinsAmount;
-                                        binding.textView3.setText(String.valueOf("Rs."+finalCoins+"/-"));
+                                       // binding.textView3.setText(String.valueOf("Rs."+finalCoins+"/-"));
+                                        updateCoins(finalCoins);
                                         binding.withdrawMob.setText("");
                                         binding.amount.setText("");
                                         Toast.makeText(MyWalletActivity.this, "Request sent successfully.", Toast.LENGTH_SHORT).show();
@@ -114,6 +117,21 @@ public class MyWalletActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+    void updateCoins(double amt){
+        database.collection("USERS")
+                .document(firebaseAuth.getCurrentUser().getUid())
+                .update("coins",FieldValue.increment(amt)).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                   if (task.isSuccessful()){
+                       binding.amount.setText(String.valueOf("Rs."+coins2+"/-"));
+                   }else {
+                       Toast.makeText(getApplicationContext(), ""+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                   }
+            }
+        });
 
     }
 }

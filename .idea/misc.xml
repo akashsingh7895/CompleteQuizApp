@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable-v24/slider_background.xml" value="0.2109375" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/background.xml" value="0.2203125" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/btn_next.xml" value="0.2203125" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/edit_text.xml" value="0.2203125" />
@@ -31,10 +32,12 @@
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_spin_wheel.xml" value="0.22" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_update_profile_acvity.xml" value="0.2" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/category_item.xml" value="0.25" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/coins_success_layout.xml" value="0.22" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/header.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/infcument_coins_diolag.xml" value="0.2" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/loading_progress_dialog.xml" value="0.19479166666666667" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/lucky_wheel_layout.xml" value="0.2" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/no_internet_dialog.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/progress_diloag.xml" value="0.20416666666666666" />

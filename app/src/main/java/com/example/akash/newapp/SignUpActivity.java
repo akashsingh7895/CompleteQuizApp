@@ -211,9 +211,6 @@ public class SignUpActivity extends AppCompatActivity {
 //        });
 
 
-
-
-
         binding.signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -231,7 +228,7 @@ public class SignUpActivity extends AppCompatActivity {
                         String name = binding.fullNameEt.getText().toString();
                         String mobile = binding.mobileEt.getText().toString();
 
-                        User user = new User(name,email,mobile);
+                        User user = new User(name,email,mobile,password);
                         firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
