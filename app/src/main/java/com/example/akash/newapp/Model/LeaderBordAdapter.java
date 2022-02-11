@@ -40,9 +40,9 @@ public class LeaderBordAdapter extends RecyclerView.Adapter<LeaderBordAdapter.Vi
         holder.binding.rank.setText(String.format("#%d",position+1));
 
         long coins = user.getCoins();
-        long coinss = coins/100;
+        long coinss = coins;
 
-        holder.binding.coins.setText(String.valueOf("Rs."+ coinss+"/-"));
+        holder.binding.coins.setText(String.valueOf( coinss+"/-"));
 
 
 

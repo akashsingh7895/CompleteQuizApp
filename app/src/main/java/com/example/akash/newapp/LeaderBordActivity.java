@@ -3,8 +3,10 @@ package com.example.akash.newapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.akash.newapp.Model.LeaderBordAdapter;
 import com.example.akash.newapp.Model.User;
@@ -24,6 +26,8 @@ public class LeaderBordActivity extends AppCompatActivity {
 
      private ArrayList<User>users;
 
+     public static Dialog loadingDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +41,17 @@ public class LeaderBordActivity extends AppCompatActivity {
         LeaderBordAdapter adapter = new LeaderBordAdapter(this,users);
         binding.dddd.setAdapter(adapter);
 
+        ///loading Dialog
+        loadingDialog = new Dialog(LeaderBordActivity.this);
+        loadingDialog.setContentView(R.layout.loading_progress_dialog);
+        loadingDialog.setCancelable(false);
+        loadingDialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.slider_background));
+        loadingDialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        loadingDialog.show();
+        /////end loading dialog
+
+
+
         firestore.collection("USERS")
                 .orderBy("coins", Query.Direction.DESCENDING).get()
                 .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
@@ -46,6 +61,7 @@ public class LeaderBordActivity extends AppCompatActivity {
                         for (DocumentSnapshot snapshot : queryDocumentSnapshots){
                             User user = snapshot.toObject(User.class);
                             users.add(user);
+                            loadingDialog.dismiss();
                         }
                         adapter.notifyDataSetChanged();
 

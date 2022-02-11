@@ -6,12 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.akash.newapp.databinding.ActivityMainBinding;
@@ -30,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
 
     private ActionBarDrawerToggle toggle;
 
+    long coins;
+    String name;
+    public static Dialog loadingDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +49,15 @@ public class MainActivity extends AppCompatActivity {
         binding.toolbar.setTitle("Quick quiz");
         binding.toolbar.setTitleTextColor(getResources().getColor(R.color.white));
 
+        ///loading Dialog
+        loadingDialog = new Dialog(MainActivity.this);
+        loadingDialog.setContentView(R.layout.loading_progress_dialog);
+        loadingDialog.setCancelable(false);
+        loadingDialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.slider_background));
+        loadingDialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        loadingDialog.show();
+        /////end loading dialog
+
         binding.allcategories.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +68,11 @@ public class MainActivity extends AppCompatActivity {
         binding.myWallet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,MyWalletActivity.class));
+//                startActivity(new Intent(MainActivity.this,MyWalletActivity.class));
+                Intent intent = new Intent(MainActivity.this,MyWalletActivity.class);
+//                intent.putExtra("user_coins",coins);
+//                intent.putExtra("user_name",name);
+                startActivity(intent);
             }
         });
 
@@ -187,10 +207,16 @@ public class MainActivity extends AppCompatActivity {
                 .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-
-                DocumentSnapshot snapshot = task.getResult();
-                String name = (String)snapshot.get("name");
-                binding.helloReaders1.setText(name);
+                      if (task.isSuccessful()){
+                          DocumentSnapshot snapshot = task.getResult();
+                          name = (String)snapshot.get("name");
+                          //coins = (long) snapshot.get("coins");
+                          binding.helloReaders1.setText(name);
+                          loadingDialog.dismiss();
+                      }else {
+                          Toast.makeText(getApplicationContext(), ""+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                      }
+               
 
             }
         });

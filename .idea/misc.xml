@@ -25,7 +25,7 @@
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_leader_bord.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_log_in.xml" value="0.2" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_my_wallet.xml" value="0.22" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_my_wallet.xml" value="0.25" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_profile.xml" value="0.22" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_quiz.xml" value="0.22" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_result.xml" value="0.18" />
@@ -41,7 +41,8 @@
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/lucky_wheel_layout.xml" value="0.2" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/no_internet_dialog.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/progress_diloag.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/row_learbord.xml" value="0.33" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/request_send_diloag.xml" value="0.33" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/row_learbord.xml" value="0.22" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/menu/home_menu.xml" value="0.33" />
       </map>
     </option>

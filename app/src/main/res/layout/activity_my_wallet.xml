@@ -77,7 +77,7 @@
         android:background="@drawable/kkk"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:layout_marginLeft="16dp"
+        android:layout_marginLeft="90dp"
         android:layout_marginRight="16dp"
         android:gravity="center"
         android:inputType="number"
@@ -85,6 +85,20 @@
         app:layout_constraintEnd_toEndOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/kkk"
+        android:padding="13dp"
+        android:text="+91"
+        android:layout_marginLeft="16dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/withdrawMob"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/withdrawMob" />
 
     <EditText
         android:id="@+id/amount"
@@ -96,6 +110,7 @@
         android:textColorHint="@color/white"
         android:layout_marginLeft="16dp"
         android:inputType="number"
+        android:hint="00000"
         android:layout_marginRight="16dp"
         android:gravity="center"
         android:layout_marginTop="25dp"
@@ -108,13 +123,14 @@
         android:id="@+id/requestButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:backgroundTint="@color/white"
         android:text="Request send"
         android:textAllCaps="false"
-        android:layout_marginTop="100dp"
+        android:layout_marginLeft="16dp"
         android:textColor="@color/darkBlue"
         app:layout_constraintEnd_toEndOf="@+id/withdrawMob"
-        app:layout_constraintStart_toStartOf="@+id/withdrawMob"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/withdrawMob" />
 
 

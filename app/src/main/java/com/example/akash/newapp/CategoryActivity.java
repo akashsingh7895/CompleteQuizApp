@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.akash.newapp.Model.CategoryAdapter;
 import com.example.akash.newapp.Model.CategoryModel;
@@ -24,6 +26,7 @@ public class CategoryActivity extends AppCompatActivity {
     ActivityCategoryBinding binding;
     ArrayList<CategoryModel> categoryModels;
     FirebaseFirestore database;
+    public static Dialog loadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,18 @@ public class CategoryActivity extends AppCompatActivity {
         });
 
 
+
+        ///loading Dialog
+        loadingDialog = new Dialog(CategoryActivity.this);
+        loadingDialog.setContentView(R.layout.loading_progress_dialog);
+        loadingDialog.setCancelable(false);
+        loadingDialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.slider_background));
+        loadingDialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        loadingDialog.show();
+        /////end loading dialog
+
+
+
         binding.CategoryRv.setLayoutManager(new GridLayoutManager(this,2));
         CategoryAdapter adapter = new CategoryAdapter(CategoryActivity.this,categoryModels);
         binding.CategoryRv.setAdapter(adapter);
@@ -56,6 +71,7 @@ public class CategoryActivity extends AppCompatActivity {
                             CategoryModel model = snapshot.toObject(CategoryModel.class);
                             model.setCategoryId(snapshot.getId());
                             categoryModels.add(model);
+                            loadingDialog.dismiss();
                         }
                         adapter.notifyDataSetChanged();
                     }

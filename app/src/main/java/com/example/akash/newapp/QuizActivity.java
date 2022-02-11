@@ -3,12 +3,14 @@ package com.example.akash.newapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.media.MediaParser;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +35,8 @@ public class QuizActivity extends AppCompatActivity {
     FirebaseFirestore database;
     int correctAnswers = 0;
 
+    public static Dialog loadingDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +49,17 @@ public class QuizActivity extends AppCompatActivity {
 
        String categoryName = getIntent().getStringExtra("catName");
        binding.toolText.setText(categoryName + " quiz");
+
+
+        ///loading Dialog
+        loadingDialog = new Dialog(QuizActivity.this);
+        loadingDialog.setContentView(R.layout.loading_progress_dialog);
+        loadingDialog.setCancelable(false);
+        loadingDialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.slider_background));
+        loadingDialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        loadingDialog.show();
+        /////end loading dialog
+
 //
 
         final String catId = getIntent().getStringExtra("catId");
@@ -61,6 +76,7 @@ public class QuizActivity extends AppCompatActivity {
             @Override
             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
                 if(queryDocumentSnapshots.getDocuments().size() < 5) {
+
                     database.collection("categories")
                             .document(catId)
                             .collection("question")
@@ -72,6 +88,7 @@ public class QuizActivity extends AppCompatActivity {
                             for(DocumentSnapshot snapshot : queryDocumentSnapshots) {
                                 Question question = snapshot.toObject(Question.class);
                                 questions.add(question);
+                                loadingDialog.dismiss();
                             }
                             setNextQuestion();
                         }
