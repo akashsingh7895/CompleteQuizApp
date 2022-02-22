@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.akash.newapp">
+    package="com.avs.akashsingh.newapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -13,16 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewApp">
         <activity
-            android:name=".UpdateProfileAcvity"
+            android:name="com.avs.akashsingh.newapp.UpdateProfileAcvity"
             android:exported="true" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name="com.avs.akashsingh.newapp.ForgotPasswordActivity"
             android:exported="true" />
         <activity
-            android:name=".SpinWheelActivity"
+            android:name="com.avs.akashsingh.newapp.SpinWheelActivity"
             android:exported="true" />
         <activity
-            android:name=".SplashActivity"
+            android:name="com.avs.akashsingh.newapp.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,31 +31,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LeaderBordActivity"
+            android:name="com.avs.akashsingh.newapp.LeaderBordActivity"
             android:exported="true" />
         <activity
-            android:name=".ProfileActivity"
+            android:name="com.avs.akashsingh.newapp.ProfileActivity"
             android:exported="true" />
         <activity
-            android:name=".ResultActivity"
+            android:name="com.avs.akashsingh.newapp.ResultActivity"
             android:exported="true" />
         <activity
-            android:name=".QuizActivity"
+            android:name="com.avs.akashsingh.newapp.QuizActivity"
             android:exported="true" />
         <activity
-            android:name=".MyWalletActivity"
+            android:name="com.avs.akashsingh.newapp.MyWalletActivity"
             android:exported="true" />
         <activity
-            android:name=".CategoryActivity"
+            android:name="com.avs.akashsingh.newapp.CategoryActivity"
             android:exported="true" />
         <activity
-            android:name=".LogInActivity"
+            android:name="com.avs.akashsingh.newapp.LogInActivity"
             android:exported="true" />
         <activity
-            android:name=".SignUpActivity"
+            android:name="com.avs.akashsingh.newapp.SignUpActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.avs.akashsingh.newapp.MainActivity"
             android:exported="true" />
     </application>
 

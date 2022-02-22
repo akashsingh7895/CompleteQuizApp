@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SpinWheelActivity"
+    tools:context="com.avs.akashsingh.newapp.SpinWheelActivity"
     android:background="@color/darkBlue">
 
 
@@ -92,7 +92,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.example.akash.newapp.SpinWheel.LuckyWheelView
+    <com.avs.akashsingh.newapp.SpinWheel.LuckyWheelView
         android:id="@+id/wheel_view"
         android:layout_width="240dp"
         android:layout_height="240dp"

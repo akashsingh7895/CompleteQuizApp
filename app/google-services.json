@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "999374334991",
-    "project_id": "newapp-2cade",
-    "storage_bucket": "newapp-2cade.appspot.com"
+    "project_number": "614927743202",
+    "project_id": "qpaisa",
+    "storage_bucket": "qpaisa.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:999374334991:android:45999c012c90295347c77a",
+        "mobilesdk_app_id": "1:614927743202:android:2d6307ef11682bf9ce46bb",
         "android_client_info": {
-          "package_name": "com.example.akash.newapp"
+          "package_name": "com.avs.akashsingh.newapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "999374334991-7v3vflk6k5612baq9ibsul8167jtaa5s.apps.googleusercontent.com",
+          "client_id": "614927743202-ev538ntkhgqphevr59jjncaijriq0qni.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDuEkFpudQ_U6jXGf9635HTWyEA6RpTneY"
+          "current_key": "AIzaSyAOHFeiw_GsT1NxH3QqAAYxCQPl7PG821I"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "999374334991-7v3vflk6k5612baq9ibsul8167jtaa5s.apps.googleusercontent.com",
+              "client_id": "614927743202-ev538ntkhgqphevr59jjncaijriq0qni.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
