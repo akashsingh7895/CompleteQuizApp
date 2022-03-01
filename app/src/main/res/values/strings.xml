@@ -1,12 +1,20 @@
 <resources>
-    <string name="app_name">NewApp</string>
+    <string name="app_name">Qpaisa</string>
 
     <string name="drawerOpen">open</string>
     <string name="drawerClose">close</string>
 
 
+
+    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="reward_video_ad">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="netive_ads">ca-app-pub-3940256099942544/2247696110</string>
+    <string name="inter_ads">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="banner_ads">ca-app-pub-3940256099942544/6300978111</string>
+
+
     <string name="supported_email">akash4099@gmail.com</string>
-    <string name="terms_condition">https://stackoverflow.com/questions/23411391/how-to-make-contact-us-form-in-android</string>
-    <string name="privacy_policy">https://stackoverflow.com/questions/23411391/how-to-make-contact-us-form-in-android</string>
+    <string name="terms_condition">https://www.blogger.com/blog/post/edit/preview/3949780852423903876/6502443942041370338</string>
+    <string name="privacy_policy">https://www.blogger.com/blog/post/edit/preview/3949780852423903876/2791108580326105419</string>
 
 </resources>

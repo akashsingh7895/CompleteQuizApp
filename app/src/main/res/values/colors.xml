@@ -10,7 +10,6 @@
 
 
 
-
     <color name="darkBlack">#0E0C06</color>
     <color name="darkBlue">#131B33</color>
     <color name="darkRed">#8A0000</color>
@@ -20,6 +19,7 @@
 
     <color name="basic">#6B1B6E</color>
     <color name="primery">#232533</color>
+    <color name="logo">#FFD700</color>
 
 
 

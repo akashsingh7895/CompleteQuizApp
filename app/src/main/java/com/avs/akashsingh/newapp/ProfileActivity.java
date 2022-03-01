@@ -9,6 +9,12 @@ import android.view.View;
 
 
 import com.avs.akashsingh.newapp.databinding.ActivityProfileBinding;
+import com.google.android.ads.nativetemplates.NativeTemplateStyle;
+import com.google.android.ads.nativetemplates.TemplateView;
+import com.google.android.gms.ads.AdLoader;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.nativead.NativeAd;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,6 +35,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         database = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
+
+        netiveAds();
 
         database.collection("USERS").document(firebaseAuth.getCurrentUser().getUid())
                 .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -64,5 +72,25 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    public void netiveAds(){
+        MobileAds.initialize(this);
+        AdLoader adLoader = new AdLoader.Builder(this, getString(R.string.netive_ads))
+                .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
+                    @Override
+                    public void onNativeAdLoaded(NativeAd nativeAd) {
+                        NativeTemplateStyle styles = new
+                                NativeTemplateStyle.Builder().build();
+                        TemplateView template = findViewById(R.id.my_template);
+                        template.setVisibility(View.VISIBLE);
+                        template.setStyles(styles);
+                        template.setNativeAd(nativeAd);
+                    }
+                })
+                .build();
+
+        adLoader.loadAd(new AdRequest.Builder().build());
+
+
     }
 }

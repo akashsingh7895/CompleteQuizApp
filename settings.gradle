@@ -7,4 +7,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "NewApp"
+include 'nativetemplates'
 include ':app'

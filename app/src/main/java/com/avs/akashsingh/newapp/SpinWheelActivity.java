@@ -47,14 +47,14 @@ public class SpinWheelActivity extends AppCompatActivity {
         });
 
         LuckyItem luckyItem1 = new LuckyItem();
-        luckyItem1.topText = "10";
+        luckyItem1.topText = "5";
         luckyItem1.secondaryText = "coins";
         luckyItem1.color = Color.parseColor("#6B1B6E");
         luckyItem1.textColor = Color.parseColor("#ffffff");
         data.add(luckyItem1);
 
         LuckyItem luckyItem2 = new LuckyItem();
-        luckyItem2.topText = "20";
+        luckyItem2.topText = "10";
         luckyItem2.secondaryText = "coins";
         luckyItem2.color = Color.parseColor("#4ECF18");
         luckyItem2.textColor = Color.parseColor("#ffffff");
@@ -62,14 +62,14 @@ public class SpinWheelActivity extends AppCompatActivity {
 
 
         LuckyItem luckyItem3 = new LuckyItem();
-        luckyItem3.topText = "30";
+        luckyItem3.topText = "15";
         luckyItem3.secondaryText = "coins";
         luckyItem3.color = Color.parseColor("#D35D0F");
         luckyItem3.textColor = Color.parseColor("#ffffff");
         data.add(luckyItem3);
 
         LuckyItem luckyItem4 = new LuckyItem();
-        luckyItem4.topText = "40";
+        luckyItem4.topText = "20";
         luckyItem4.secondaryText = "coins";
         luckyItem4.color = Color.parseColor("#9FC812");
         luckyItem4.textColor = Color.parseColor("#ffffff");
@@ -77,14 +77,14 @@ public class SpinWheelActivity extends AppCompatActivity {
 
 
         LuckyItem luckyItem5 = new LuckyItem();
-        luckyItem5.topText = "50";
+        luckyItem5.topText = "25";
         luckyItem5.secondaryText = "coins";
         luckyItem5.color = Color.parseColor("#10C1A7");
         luckyItem5.textColor = Color.parseColor("#ffffff");
         data.add(luckyItem5);
 
         LuckyItem luckyItem6 = new LuckyItem();
-        luckyItem6.topText = "60";
+        luckyItem6.topText = "30";
         luckyItem6.secondaryText = "coins";
         luckyItem6.color = Color.parseColor("#EC0D0D");
         luckyItem6.textColor = Color.parseColor("#ffffff");
@@ -92,21 +92,21 @@ public class SpinWheelActivity extends AppCompatActivity {
 
 
         LuckyItem luckyItem7 = new LuckyItem();
-        luckyItem7.topText = "70";
+        luckyItem7.topText = "35";
         luckyItem7.secondaryText = "coins";
         luckyItem7.color = Color.parseColor("#EC0DE8");
         luckyItem7.textColor = Color.parseColor("#ffffff");
         data.add(luckyItem7);
 
         LuckyItem luckyItem8 = new LuckyItem();
-        luckyItem8.topText = "80";
+        luckyItem8.topText = "50";
         luckyItem8.secondaryText = "coins";
         luckyItem8.color = Color.parseColor("#0D23EC");
         luckyItem8.textColor = Color.parseColor("#ffffff");
         data.add(luckyItem8);
 
         binding.wheelView.setData(data);
-        binding.wheelView.setRound(5);
+        binding.wheelView.setRound(10);
 
 
         binding.btn.setOnClickListener(new View.OnClickListener() {
@@ -150,37 +150,36 @@ public class SpinWheelActivity extends AppCompatActivity {
         switch (index){
 
             case 0:
-                cash = 10;
+                cash = 5;
                 break;
 
             case 1:
-                cash = 20;
+                cash = 10;
                 break;
 
             case 2:
-                cash = 30;
+                cash = 15;
                 break;
             case 3:
-                cash = 40;
+                cash = 20;
                 break;
             case 4:
-                cash = 50;
+                cash = 25;
                 break;
             case 5:
-                cash = 60;
+                cash = 30;
                 break;
             case 6:
-                cash = 70;
+                cash = 35;
                 break;
             case 7:
-                cash = 80;
+                cash = 50;
                 break;
         }
 
 
 
         FirebaseFirestore firestore = FirebaseFirestore.getInstance();
-
         firestore.collection("USERS")
                 .document(FirebaseAuth.getInstance().getUid())
                 .update("coins", FieldValue.increment(cash))

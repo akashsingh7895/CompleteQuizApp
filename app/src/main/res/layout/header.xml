@@ -6,15 +6,16 @@
     android:background="@color/darkBlue"
     >
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/logoIv"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/qpaisa_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/ic_baseline_person_24"
-        app:tint="@color/white"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

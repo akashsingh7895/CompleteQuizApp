@@ -13,6 +13,12 @@ import android.widget.Toast;
 import com.avs.akashsingh.newapp.Model.WithdrawRequest;
 
 import com.avs.akashsingh.newapp.databinding.ActivityMyWalletBinding;
+import com.google.android.ads.nativetemplates.NativeTemplateStyle;
+import com.google.android.ads.nativetemplates.TemplateView;
+import com.google.android.gms.ads.AdLoader;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.nativead.NativeAd;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -50,6 +56,8 @@ public class MyWalletActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        netiveAds();
 
        // binding.amount.setText("00");
 
@@ -199,19 +207,24 @@ public class MyWalletActivity extends AppCompatActivity {
 
 
     }
-//    void updateCoins(double amt){
-//        database.collection("USERS")
-//                .document(firebaseAuth.getCurrentUser().getUid())
-//                .update("coins",FieldValue.increment(amt)).addOnCompleteListener(new OnCompleteListener<Void>() {
-//            @Override
-//            public void onComplete(@NonNull Task<Void> task) {
-//                   if (task.isSuccessful()){
-//                       binding.amount.setText(String.valueOf("Rs."+coins2+"/-"));
-//                   }else {
-//                       Toast.makeText(getApplicationContext(), ""+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-//                   }
-//            }
-//        });
-//
-//    }
+public void netiveAds(){
+    MobileAds.initialize(this);
+       AdLoader adLoader = new AdLoader.Builder(this, getString(R.string.netive_ads))
+             .forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
+                   @Override
+                  public void onNativeAdLoaded(NativeAd nativeAd) {
+                       NativeTemplateStyle styles = new
+                                NativeTemplateStyle.Builder().build();
+                        TemplateView template = findViewById(R.id.my_template);
+                        template.setVisibility(View.VISIBLE);
+                        template.setStyles(styles);
+                        template.setNativeAd(nativeAd);
+                 }
+                })
+                .build();
+
+        adLoader.loadAd(new AdRequest.Builder().build());
+
+
+}
 }

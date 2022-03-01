@@ -1,5 +1,6 @@
 package com.avs.akashsingh.newapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
@@ -15,6 +16,10 @@ import android.widget.Toast;
 import com.avs.akashsingh.newapp.Model.Question;
 
 import com.avs.akashsingh.newapp.databinding.ActivityQuizBinding;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -36,6 +41,8 @@ public class QuizActivity extends AppCompatActivity {
 
     public static Dialog loadingDialog;
 
+    InterstitialAd mInterstitialAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +55,10 @@ public class QuizActivity extends AppCompatActivity {
 
        String categoryName = getIntent().getStringExtra("catName");
        binding.toolText.setText(categoryName + " quiz");
+
+       if (mInterstitialAd!=null){
+           mInterstitialAd.show(QuizActivity.this);
+       }
 
 
         ///loading Dialog
@@ -237,6 +248,28 @@ public class QuizActivity extends AppCompatActivity {
     void inCorrect(){
         MediaPlayer mediaPlayer = MediaPlayer.create(this,R.raw.wrongt);
         mediaPlayer.start();
+    }
+
+    public void showInterAds(){
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(this,getString(R.string.inter_ads), adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+
+                        mInterstitialAd = null;
+                    }
+                });
     }
 
 

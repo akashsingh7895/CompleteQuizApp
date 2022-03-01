@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,12 +20,23 @@ import android.widget.Toast;
 
 
 import com.avs.akashsingh.newapp.databinding.ActivityMainBinding;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
     String name;
     public static Dialog loadingDialog;
 
+    InterstitialAd mInterstitialAd;
+    private AdView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +62,25 @@ public class MainActivity extends AppCompatActivity {
         database = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
-        binding.toolbar.setTitle("Quick quiz");
+        binding.toolbar.setTitle("Qpaisa");
         binding.toolbar.setTitleTextColor(getResources().getColor(R.color.white));
+
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+
+            }
+        });
+
+
+        AdView adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId(getResources().getString(R.string.banner_ads));
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
 
         ///loading Dialog
         loadingDialog = new Dialog(MainActivity.this);
@@ -61,7 +94,19 @@ public class MainActivity extends AppCompatActivity {
         binding.allcategories.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,CategoryActivity.class));
+                if (mInterstitialAd!=null){
+                    mInterstitialAd.show(MainActivity.this);
+                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                        @Override
+                        public void onAdDismissedFullScreenContent() {
+                            super.onAdDismissedFullScreenContent();
+                            startActivity(new Intent(MainActivity.this,CategoryActivity.class));
+                        }
+                    });
+                }else {
+                    startActivity(new Intent(MainActivity.this,CategoryActivity.class));
+                }
+
             }
         });
 
@@ -94,10 +139,33 @@ public class MainActivity extends AppCompatActivity {
         binding.spinWheel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,SpinWheelActivity.class));
+                if (mInterstitialAd!=null){
+                    mInterstitialAd.show(MainActivity.this);
+                    mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                        @Override
+                        public void onAdDismissedFullScreenContent() {
+                            super.onAdDismissedFullScreenContent();
+                            startActivity(new Intent(MainActivity.this,SpinWheelActivity.class));
+                        }
+                    });
+                }else {
+                    Toast.makeText(getApplicationContext(), "Please wait a minute", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
 
+        binding.watchVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,WatchVideoActivity.class));
+            }
+        });
+
+        showInterAds();
+
+
+        firebaseNotification();
 
         toggle = new ActionBarDrawerToggle(this,binding.drawerLayout,binding.toolbar,R.string.drawerOpen,R.string.drawerClose);
 
@@ -201,8 +269,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
-
         database.collection("USERS").document(firebaseAuth.getCurrentUser().getUid())
                 .get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -216,11 +282,56 @@ public class MainActivity extends AppCompatActivity {
                       }else {
                           Toast.makeText(getApplicationContext(), ""+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                       }
-               
-
             }
         });
 
+    }
+    void firebaseNotification(){
+        FirebaseMessaging.getInstance().subscribeToTopic("QPaisa")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg ="Done";
+                        if (!task.isSuccessful()) {
+                            msg = "Failed";
+                        }
 
+                       // Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+    public void showInterAds(){
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(this,getString(R.string.inter_ads), adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        // The mInterstitialAd reference will be null until
+                        // an ad is loaded.
+                        mInterstitialAd = interstitialAd;
+
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error
+
+                        mInterstitialAd = null;
+                    }
+                });
+    }
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setMessage("Are you sure you want to exit?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        MainActivity.super.onBackPressed();
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
     }
 }

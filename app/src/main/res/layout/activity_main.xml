@@ -18,11 +18,10 @@
     android:background="@color/darkBlue">
 
 
-
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/toolbar"/>
+        android:layout_height="wrap_content" />
 
     <ScrollView
         android:layout_below="@id/toolbar"
@@ -75,8 +74,24 @@
 
           </RelativeLayout>
 
+
+          <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+              android:id="@+id/adView"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@id/rel"
+              android:layout_centerHorizontal="true"
+              android:layout_marginBottom="20dp"
+              ads:adSize="BANNER"
+              ads:adUnitId="@string/banner_ads">
+
+          </com.google.android.gms.ads.AdView>
+
+
+
+
           <RelativeLayout
-             android:layout_below="@id/rel"
+             android:layout_below="@id/adView"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
@@ -87,12 +102,12 @@
                   android:layout_height="wrap_content"
                   android:orientation="horizontal">
 
-
                   <androidx.cardview.widget.CardView
                       android:id="@+id/allcategories"
                       android:layout_width="match_parent"
                       android:layout_height="150dp"
                       android:layout_margin="10dp"
+                      android:layout_marginTop="25dp"
                       android:layout_weight="1"
                       android:backgroundTint="@color/primery"
                       app:cardCornerRadius="20dp"
@@ -155,7 +170,6 @@
                       <androidx.constraintlayout.widget.ConstraintLayout
                           android:layout_width="match_parent"
                           android:layout_height="match_parent">
-
 
                           <ImageView
                               android:id="@+id/imageView"
@@ -374,7 +388,7 @@
                           <TextView
                               android:layout_width="wrap_content"
                               android:layout_height="wrap_content"
-                              android:text="check your rank"
+                              android:text="Check your rank"
                               android:textColor="@color/white"
                               android:layout_marginTop="5dp"
                               android:textSize="12sp"
@@ -391,6 +405,7 @@
                   </androidx.cardview.widget.CardView>
 
                   <androidx.cardview.widget.CardView
+                      android:id="@+id/watch_video"
                       android:layout_width="match_parent"
                       android:layout_height="150dp"
                       app:cardElevation="3dp"
@@ -442,12 +457,10 @@
 
                       </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-
                   </androidx.cardview.widget.CardView>
 
               </LinearLayout>
+
 
 
           </RelativeLayout>

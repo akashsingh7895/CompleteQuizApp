@@ -7,27 +7,57 @@
     tools:context="com.avs.akashsingh.newapp.SplashActivity"
     android:background="@color/darkBlue">
 
-    <ImageView
+
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/logoIv"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        app:cardCornerRadius="50sp"
+        android:src="@drawable/qpaisa_logo"
         android:layout_marginTop="250dp"
-        android:src="@drawable/user"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/darkBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
 
     <TextView
         android:id="@+id/titleTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="App name"
-        android:textColor="@color/white"
+        android:text="@string/app_name"
+        android:textColor="@color/logo"
         android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/logoIv"
         app:layout_constraintStart_toStartOf="@+id/logoIv"
         app:layout_constraintTop_toBottomOf="@+id/logoIv" />
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/gfgds"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Earn Real Cash"-->
+<!--        android:textColor="@color/logo"-->
+<!--        android:textSize="14sp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/titleTv"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/titleTv"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/titleTv" />-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Created by - Avs Solution"
+        android:textColor="@color/logo"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

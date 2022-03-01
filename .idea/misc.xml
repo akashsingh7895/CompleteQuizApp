@@ -18,6 +18,7 @@
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/option_wrong.xml" value="0.2666015625" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/round_line.xml" value="0.2203125" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/share_app.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/video_item_back.xml" value="0.2203125" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/view_back.xml" value="0.2203125" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/drawable/wrong_option.xml" value="0.2203125" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_category.xml" value="0.33" />
@@ -29,13 +30,14 @@
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_profile.xml" value="0.22" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_quiz.xml" value="0.22" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_result.xml" value="0.18" />
-        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_sign_up.xml" value="0.18" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_spin_wheel.xml" value="0.22" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_update_profile_acvity.xml" value="0.2" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/activity_watch_video.xml" value="0.22" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/category_item.xml" value="0.25" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/coins_success_layout.xml" value="0.22" />
-        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/header.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/header.xml" value="0.22" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/infcument_coins_diolag.xml" value="0.2" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/loading_progress_dialog.xml" value="0.19479166666666667" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/lucky_wheel_layout.xml" value="0.2" />
@@ -44,6 +46,8 @@
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/request_send_diloag.xml" value="0.33" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/layout/row_learbord.xml" value="0.22" />
         <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/menu/home_menu.xml" value="0.33" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2203125" />
+        <entry key="..\:/Users/aakash/Desktop/NewApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18802083333333333" />
       </map>
     </option>
   </component>

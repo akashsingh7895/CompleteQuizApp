@@ -7,22 +7,25 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/qpaisa_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NewApp">
         <activity
-            android:name="com.avs.akashsingh.newapp.UpdateProfileAcvity"
+            android:name=".WatchVideoActivity"
             android:exported="true" />
         <activity
-            android:name="com.avs.akashsingh.newapp.ForgotPasswordActivity"
+            android:name=".UpdateProfileAcvity"
             android:exported="true" />
         <activity
-            android:name="com.avs.akashsingh.newapp.SpinWheelActivity"
+            android:name=".ForgotPasswordActivity"
             android:exported="true" />
         <activity
-            android:name="com.avs.akashsingh.newapp.SplashActivity"
+            android:name=".SpinWheelActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,32 +34,37 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.avs.akashsingh.newapp.LeaderBordActivity"
+            android:name=".LeaderBordActivity"
             android:exported="true" />
         <activity
-            android:name="com.avs.akashsingh.newapp.ProfileActivity"
+            android:name=".ProfileActivity"
             android:exported="true" />
         <activity
-            android:name="com.avs.akashsingh.newapp.ResultActivity"
+            android:name=".ResultActivity"
             android:exported="true" />
         <activity
-            android:name="com.avs.akashsingh.newapp.QuizActivity"
+            android:name=".QuizActivity"
             android:exported="true" />
         <activity
-            android:name="com.avs.akashsingh.newapp.MyWalletActivity"
+            android:name=".MyWalletActivity"
             android:exported="true" />
         <activity
-            android:name="com.avs.akashsingh.newapp.CategoryActivity"
+            android:name=".CategoryActivity"
             android:exported="true" />
         <activity
-            android:name="com.avs.akashsingh.newapp.LogInActivity"
+            android:name=".LogInActivity"
             android:exported="true" />
         <activity
-            android:name="com.avs.akashsingh.newapp.SignUpActivity"
+            android:name=".SignUpActivity"
             android:exported="true" />
         <activity
-            android:name="com.avs.akashsingh.newapp.MainActivity"
+            android:name=".MainActivity"
             android:exported="true" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/admob_app_id" />
+
     </application>
 
 </manifest>
