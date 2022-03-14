@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                 }else {
-                    Toast.makeText(getApplicationContext(), "Please wait a minute", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(MainActivity.this,SpinWheelActivity.class));
                 }
 
             }
@@ -204,9 +204,9 @@ public class MainActivity extends AppCompatActivity {
                                          try {
                                              Intent shareIntent = new Intent(Intent.ACTION_SEND);
                                              shareIntent.setType("text/plain");
-                                             shareIntent.putExtra(Intent.EXTRA_SUBJECT, "My application name");
-                                             String shareMessage= "\nLet me recommend you this application\n\n";
-                                             shareMessage = shareMessage + "https://play.google.com/store/apps/details?id = com.example.akash.newapp" + BuildConfig.APPLICATION_ID +"\n\n";
+                                             shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+                                             String shareMessage= "\nLet me recommend you this application You can get Rs 50/- as SIGN UP Bonous\n\n";
+                                             shareMessage = shareMessage + "https://play.google.com/store/apps/details?id="+getPackageName();
                                              shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
                                              startActivity(Intent.createChooser(shareIntent, "choose one"));
                                          } catch(Exception e) {
@@ -217,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
                                      case R.id.rateThisApp:
 
                                          try{
-                                             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+getPackageName())));
+                                             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+getPackageName())));
                                          }
                                          catch (ActivityNotFoundException e){
                                              startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+getPackageName())));

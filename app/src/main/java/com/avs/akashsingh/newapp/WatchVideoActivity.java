@@ -61,7 +61,11 @@ public class WatchVideoActivity extends AppCompatActivity {
         /////end loading dialog
 
 
-        loadAd();
+        loadAd1();
+        loadAd2();
+        loadAd3();
+        loadAd4();
+        loadAd5();
 
 
         binding.backButton.setOnClickListener(new View.OnClickListener() {
@@ -107,7 +111,7 @@ public class WatchVideoActivity extends AppCompatActivity {
                     mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
                         @Override
                         public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-                            loadAd();
+                            loadAd1();
                             coins = coins + 10;
 
                             firestore.collection("USERS")
@@ -159,7 +163,7 @@ public class WatchVideoActivity extends AppCompatActivity {
                     mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
                         @Override
                         public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-                            loadAd();
+                            loadAd2();
                             coins = coins + 20;
 
                             firestore.collection("USERS")
@@ -210,7 +214,7 @@ public class WatchVideoActivity extends AppCompatActivity {
                     mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
                         @Override
                         public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-                            loadAd();
+                            loadAd3();
                             coins = coins + 30;
 
                             firestore.collection("USERS")
@@ -261,7 +265,7 @@ public class WatchVideoActivity extends AppCompatActivity {
                     mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
                         @Override
                         public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-                            loadAd();
+                            loadAd4();
                             coins = coins + 40;
 
                             firestore.collection("USERS")
@@ -312,7 +316,7 @@ public class WatchVideoActivity extends AppCompatActivity {
                     mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
                         @Override
                         public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
-                            loadAd();
+                            loadAd5();
                             coins = coins + 50;
 
                             firestore.collection("USERS")
@@ -359,10 +363,86 @@ public class WatchVideoActivity extends AppCompatActivity {
 
     }
 
-    void loadAd() {
+    void loadAd1() {
         AdRequest adRequest = new AdRequest.Builder().build();
 
-        RewardedAd.load(this, getString(R.string.reward_video_ad),
+        RewardedAd.load(this, getString(R.string.reward_video_ad1),
+                adRequest, new RewardedAdLoadCallback() {
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error.
+
+                        mRewardedAd = null;
+                    }
+
+                    @Override
+                    public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
+                        mRewardedAd = rewardedAd;
+                    }
+                });
+
+    }
+    void loadAd2() {
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        RewardedAd.load(this, getString(R.string.reward_video_ad2),
+                adRequest, new RewardedAdLoadCallback() {
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error.
+
+                        mRewardedAd = null;
+                    }
+
+                    @Override
+                    public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
+                        mRewardedAd = rewardedAd;
+                    }
+                });
+
+    }
+    void loadAd3() {
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        RewardedAd.load(this, getString(R.string.reward_video_ad3),
+                adRequest, new RewardedAdLoadCallback() {
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error.
+
+                        mRewardedAd = null;
+                    }
+
+                    @Override
+                    public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
+                        mRewardedAd = rewardedAd;
+                    }
+                });
+
+    }
+    void loadAd4() {
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        RewardedAd.load(this, getString(R.string.reward_video_ad4),
+                adRequest, new RewardedAdLoadCallback() {
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error.
+
+                        mRewardedAd = null;
+                    }
+
+                    @Override
+                    public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
+                        mRewardedAd = rewardedAd;
+                    }
+                });
+
+    }
+    void loadAd5() {
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        RewardedAd.load(this, getString(R.string.reward_video_ad5),
                 adRequest, new RewardedAdLoadCallback() {
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {

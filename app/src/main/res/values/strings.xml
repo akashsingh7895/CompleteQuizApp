@@ -6,14 +6,37 @@
 
 
 
+
+    <!-- test ads-->
+
     <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="reward_video_ad">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="reward_video_ad1">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="reward_video_ad2">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="reward_video_ad3">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="reward_video_ad4">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="reward_video_ad5">ca-app-pub-3940256099942544/5224354917</string>
     <string name="netive_ads">ca-app-pub-3940256099942544/2247696110</string>
     <string name="inter_ads">ca-app-pub-3940256099942544/1033173712</string>
     <string name="banner_ads">ca-app-pub-3940256099942544/6300978111</string>
 
+    <!-- test ads-->
 
-    <string name="supported_email">akash4099@gmail.com</string>
+<!--    Real ads-->
+
+<!--    <string name="admob_app_id">ca-app-pub-9682882656426252~5599266299</string>-->
+<!--    <string name="reward_video_ad1">ca-app-pub-9682882656426252/7686690816</string>-->
+<!--    <string name="reward_video_ad2">ca-app-pub-9682882656426252/3930961408</string>-->
+<!--    <string name="reward_video_ad3">ca-app-pub-9682882656426252/9218074960</string>-->
+<!--    <string name="reward_video_ad4">ca-app-pub-9682882656426252/5087258266</string>-->
+<!--    <string name="reward_video_ad5">ca-app-pub-9682882656426252/4524151483</string>-->
+<!--    <string name="netive_ads">ca-app-pub-9682882656426252/1232963107</string>-->
+<!--    <string name="inter_ads">ca-app-pub-9682882656426252/9739984993</string>-->
+<!--    <string name="banner_ads">ca-app-pub-9682882656426252/7443148236</string>-->
+
+<!--    Real ads-->
+
+
+    <string name="supported_email">singhakash4099@gmail.com</string>
     <string name="terms_condition">https://www.blogger.com/blog/post/edit/preview/3949780852423903876/6502443942041370338</string>
     <string name="privacy_policy">https://www.blogger.com/blog/post/edit/preview/3949780852423903876/2791108580326105419</string>
 

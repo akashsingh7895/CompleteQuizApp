@@ -25,7 +25,7 @@ public class SignUpActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore database;
 
-    private String emailPattern ="[a-zA-Z0_9._-]+@[a-z]+.[a-z]+";
+    private String emailPattern ="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-zA-Z]{2,4}+";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
