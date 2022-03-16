@@ -3,9 +3,11 @@ package com.avs.akashsingh.newapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 
 
 import com.avs.akashsingh.newapp.databinding.ActivityProfileBinding;
@@ -27,6 +29,9 @@ public class ProfileActivity extends AppCompatActivity {
     FirebaseFirestore database;
     FirebaseAuth firebaseAuth;
 
+    public static Dialog loadingDialog;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,15 @@ public class ProfileActivity extends AppCompatActivity {
 
         database = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
+
+        ///loading Dialog
+        loadingDialog = new Dialog(ProfileActivity.this);
+        loadingDialog.setContentView(R.layout.loading_progress_dialog);
+        loadingDialog.setCancelable(false);
+        loadingDialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.slider_background));
+        loadingDialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        loadingDialog.show();
+        /////end loading dialog
 
         netiveAds();
 
@@ -53,6 +67,8 @@ public class ProfileActivity extends AppCompatActivity {
                     binding.name.setText(name);
                     binding.email.setText(emailId);
                     binding.mobline.setText(mob);
+
+                    loadingDialog.dismiss();
 
                 }
             }
